@@ -1,0 +1,34 @@
+.nav-item a.nav-link{
+    color: #232323;
+}
+
+.nav-item:hover{
+    background-color: #00BC96;
+    border-radius: 5px;
+}
+
+.nav-item:hover a.nav-link{
+    color: #fff;
+}
+
+.nav-item.active{
+    background-color: #00BC96;
+    border-radius: 5px;
+}
+
+.nav-item.active a.nav-link{
+    color: #fff;
+}
+
+.dropdown .dropdown-item{
+    color: #232323;
+}
+
+.nav-item.active.dropdown .dropdown-item.active{
+    background-color: #00BC96;
+    color: #fff;
+}
+
+#alert-success, #alert-error{
+    display: none;
+}
