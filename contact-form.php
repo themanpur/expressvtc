@@ -14,10 +14,10 @@ if(isset($_POST['subject']))
 if(isset($_POST['message']))
     $message = $_POST['message'];
 
-$to = "contact.expressdocumentlegit@gmail.com";
-$main_subject = "Message sur expressdocumentslegit.com";
+$to = "gervaisjeudong@gmail0com";
+$main_subject = "Message sur express-vtc.com";
 
-$mail = "<p>Un nouveau Message sur www.expressdocumentslegit.com</p>";
+$mail = "<p>Un nouveau Message sur www.express-vtc.com</p>";
 $mail .= "<p>Nom: <strong>".$name."</strong></p>";
 $mail .= "<p>Sujet: <strong>".$subject."</strong></p>";
 $mail .= "<p>Adresse e-mail: <strong>".$email."</strong></p>";
@@ -33,12 +33,12 @@ $mail .= "<p><strong>".$message."</strong></p>";
 $mail_header = array(
     'MIME-Version' => '1.0',
     'Content-type' => 'text/html; charset=iso-8859-1',
-    'From' => 'Documents Market <website@expressdocumentslegit.com>',
+    'From' => 'Express VTC <website@express-vtc.com>',
     'Reply-To' => $email,
     'X-Mailer' => 'PHP/' . phpversion()
 );
 
-ini_set("SMTP","ssl://expressdocumentslegit.com");
+ini_set("SMTP","ssl://express-vtc.com");
 ini_set("smtp_port","465");
 
 // Please specify the return address to use
