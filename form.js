@@ -65,4 +65,41 @@ $(document).ready(function(){
             }
         });
     });
+
+    $('#demandeForm').on('submit', function(evt){
+        evt.preventDefault();
+        var name = $('#name').val();
+        var firstname = $('#firstname').val();
+        var email = $('#email').val();
+        var sex = $('#sex').val();
+        var casier = $('casier').val();
+        var passed = $('passed').val();
+        var level = $('level').val();
+        var town = $('town').val();
+        $.ajax({
+            url: './demande-form.php',
+            type:'POST',
+            data: { name: name, firstname: firstname, email: email, sex: sex, casier: casier, passed: passed, level: level, town: town},
+            success: function (rep) {
+                if(rep.code == 200){
+                    $('#demandeForm :input').attr('disabled', 'disabled');
+                    $('#demandeForm').fadeTo( "slow", 1, function() {
+                        $(this).find(':input').attr('disabled', 'disabled');
+                        $(this).find('label').css('cursor','default');
+                        $('#alert-success').fadeIn();
+                    });
+                }else{
+                    $('#demandeForm').fadeTo( "slow", 1, function() {
+                        $('#alert-error').fadeIn();
+                    });
+                }
+            },
+            error: function (res,status,err) {
+                console.log(status+status+err);
+                $('#demandeForm').fadeTo( "slow", 1, function() {
+                    $('#alert-error').fadeIn();
+                });
+            }
+        });
+    });
 });
