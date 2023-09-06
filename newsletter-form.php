@@ -3,27 +3,28 @@
 $name = "";
 $email = "";
 
+
 if(isset($_POST['name']))
     $name = $_POST['name'];
 if(isset($_POST['email']))
     $email = $_POST['email'];
 
 $to = "expressvtc1@gmail.com";
-$main_subject = "Abonnement depuis expressvtc.com";
+$main_subject = "Abonnement depuis express-vtc.com";
 
-$mail = "<p>Un nouvel abonnement sur www.expressvtc.com</p>";
+$mail = "<p>Un nouvel abonnement sur www.express-vtc.com</p>";
 $mail .= "<p>Nom: <strong>".$name."</strong></p>";
 $mail .= "<p>Adresse e-mail: <strong>".$email."</strong></p>";
 
 $mail_header = array(
     'MIME-Version' => '1.0',
     'Content-type' => 'text/html; charset=iso-8859-1',
-    'From' => 'Express Doc Services <website@expressvtc.com>',
+    'From' => 'Express Doc Services <website@express-vtc.com>',
     'Reply-To' => $email,
     'X-Mailer' => 'PHP/' . phpversion()
 );
 
-ini_set("SMTP","ssl://expressvtc.com");
+ini_set("SMTP","ssl://express-vtc.com");
 ini_set("smtp_port","465");
 
 
